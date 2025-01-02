@@ -160,7 +160,7 @@ const users: User[] = [
     },
   },
   {
-    id: 1,
+    id: 4,
     username: "Shivam rana",
     avatar: "/assets/shiv.jpg",
     posts: 245,
