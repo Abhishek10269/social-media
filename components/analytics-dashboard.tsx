@@ -40,7 +40,6 @@ import { ContentBreakdown } from "@/components/content-breakdown"
 import { ComparativeMetrics } from "@/components/comparative-metrics"
 import type { User } from "@/types/analytics"
 
-// Enhanced dummy data (previous data structure remains, adding new fields)
 const users: User[] = [
   {
     id: 1,
@@ -262,16 +261,6 @@ export default function AnalyticsDashboard() {
     URL.revokeObjectURL(url);
   };
 
-
-  // Toggle dark mode
-  React.useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-    }
-  }, [isDarkMode])
-
   return (
     <div className={`min-h-screen ${isDarkMode ? "dark" : ""}`}>
       <div className="container mx-auto py-10">
@@ -311,13 +300,6 @@ export default function AnalyticsDashboard() {
                 </TooltipContent>
               </TooltipPrimitive>
             </TooltipProvider>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsDarkMode(!isDarkMode)}
-            >
-              {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </Button>
           </div>
         </div>
 
@@ -493,7 +475,7 @@ export default function AnalyticsDashboard() {
                                   config={{
                                     engagement: {
                                       label: "Engagement Rate",
-                                      color: "#86efac",
+                                      color: "#ef4444",
                                     },
                                   }}
                                   className="h-[200px]"
@@ -509,7 +491,7 @@ export default function AnalyticsDashboard() {
                                       <Line
                                         type="monotone"
                                         dataKey="engagement"
-                                        stroke="#86efac"
+                                        stroke="#ef4444"
                                         strokeWidth={3}
                                       />
                                     </LineChart>
